@@ -54,6 +54,9 @@ class FavoritesListView extends StatelessWidget {
               ],
             ),
           ),
+          onTap: () {
+            Navigator.of(context).pushReplacementNamed('/followers', arguments: favorites[index].login);
+          },
         );
       },
     );
