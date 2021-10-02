@@ -22,6 +22,13 @@ class UserInfoWidget extends StatelessWidget {
     required this.htmlUrl
   }) : super(key: key);
 
+  Widget _descriptionWidget(BuildContext context, String text, FontWeight fontWeight, double fontSize) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 6.0),
+      child: appTextDefault(text, TextAlign.left, AppColors.of(context).appText, fontWeight, FontStyle.normal, fontSize)
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -49,18 +56,9 @@ class UserInfoWidget extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 6.0),
-                              child: appTextDefault(login, TextAlign.left, AppColors.of(context).appText, FontWeight.bold, FontStyle.normal, 20),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 6.0),
-                              child: appTextDefault(name, TextAlign.left, AppColors.of(context).appText, FontWeight.normal, FontStyle.normal, 16),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 6.0),
-                              child: appTextDefault(location, TextAlign.left, AppColors.of(context).appText, FontWeight.normal, FontStyle.normal, 16),
-                            ),
+                            _descriptionWidget(context, login, FontWeight.bold, 20),
+                            _descriptionWidget(context, name, FontWeight.normal, 16),
+                            _descriptionWidget(context, location, FontWeight.normal, 16),
                           ]
                       ),
                     ),
