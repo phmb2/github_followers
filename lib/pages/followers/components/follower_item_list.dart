@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 Widget followerItemList(String avatarUrl, String login) {

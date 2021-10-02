@@ -19,7 +19,6 @@ class _GitHubProfilePageState extends State<GitHubProfilePage> {
       appBar: AppBar(
         title: appTextDefault('GitHub Profile', TextAlign.center, AppColors.of(context).appText.withOpacity(0.9), FontWeight.w500, FontStyle.normal, 18),
         backgroundColor: AppColors.of(context).appBackground,
-        elevation: 0,
         leading: BackButton(
             color: AppColors.of(context).appText
         ),
