@@ -22,9 +22,9 @@ class UserInfoWidget extends StatelessWidget {
     required this.htmlUrl
   }) : super(key: key);
 
-  Widget _descriptionWidget(BuildContext context, String text, FontWeight fontWeight, double fontSize) {
+  Widget _descriptionText(BuildContext context, String text, FontWeight fontWeight, double fontSize) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 6.0),
+      padding: EdgeInsets.only(bottom: 6.0),
       child: appTextDefault(text, TextAlign.left, AppColors.of(context).appText, fontWeight, FontStyle.normal, fontSize)
     );
   }
@@ -41,7 +41,7 @@ class UserInfoWidget extends StatelessWidget {
               children: [
                   Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 16.0, left: 16.0, bottom: 16.0),
+                      padding: EdgeInsets.only(top: 16.0, left: 16.0, bottom: 16.0),
                       child: ClipRRect(
                           borderRadius: BorderRadius.all(Radius.circular(10.0)),
                           child: Image.network(avatarUrl, fit: BoxFit.cover),
@@ -56,9 +56,9 @@ class UserInfoWidget extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            _descriptionWidget(context, login, FontWeight.bold, 20),
-                            _descriptionWidget(context, name, FontWeight.normal, 16),
-                            _descriptionWidget(context, location, FontWeight.normal, 16),
+                            _descriptionText(context, login, FontWeight.bold, 20),
+                            _descriptionText(context, name, FontWeight.normal, 16),
+                            _descriptionText(context, location, FontWeight.normal, 16),
                           ]
                       ),
                     ),
@@ -67,12 +67,12 @@ class UserInfoWidget extends StatelessWidget {
             ),
             Expanded(
               child: Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: EdgeInsets.all(16.0),
                   child: appTextDefault(bio, TextAlign.start, AppColors.of(context).appText, FontWeight.normal, FontStyle.normal, 16),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: EdgeInsets.all(16.0),
               child: appButtonDefault(() {
                 Navigator.of(context).pushNamed('/github_profile', arguments: htmlUrl);
               }, "GitHub Profile", context),
