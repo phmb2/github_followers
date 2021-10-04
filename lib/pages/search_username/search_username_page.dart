@@ -85,7 +85,7 @@ class _SearchUsernamePageState extends State<SearchUsernamePage> {
           Navigator.of(context).pushNamed('/followers', arguments: _usernameController.text);
           _usernameController.clear();
         }
-      }, "Get Followers", context),
+      }, "Get Followers", AppColors.of(context).appButtonDefaultBackground, context),
     );
   }
 

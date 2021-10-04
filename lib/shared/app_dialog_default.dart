@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:github_followers/resources/colors/app_colors.dart';
-
 import 'app_text_default.dart';
-
 
 class AppDialogDefault extends StatefulWidget {
   final Function onPressed;

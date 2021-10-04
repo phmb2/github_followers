@@ -75,7 +75,13 @@ class UserInfoWidget extends StatelessWidget {
               padding: EdgeInsets.all(16.0),
               child: appButtonDefault(() {
                 Navigator.of(context).pushNamed('/github_profile', arguments: htmlUrl);
-              }, "GitHub Profile", context),
+              }, "GitHub Profile", AppColors.of(context).appButtonPurpleBackground, context),
+            ),
+            Padding(
+              padding: EdgeInsets.all(16.0),
+              child: appButtonDefault(() {
+                Navigator.of(context).pushNamed('/followers', arguments: login);
+              }, "Get Followers", AppColors.of(context).appButtonDefaultBackground, context),
             ),
           ],
         ),

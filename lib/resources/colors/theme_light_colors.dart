@@ -13,6 +13,7 @@ class ThemeLight extends AppColors {
 
   //App Button Default
   Color get appButtonDefaultBackground => Color(0xFF53B175);
+  Color get appButtonPurpleBackground => Color(0xFFA020F0);
   Color get appButtonDefaultTextColor => Colors.white;
 
   //App Text Form Field

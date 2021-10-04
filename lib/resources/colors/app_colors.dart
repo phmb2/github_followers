@@ -18,6 +18,7 @@ abstract class AppColors {
 
   //App Button Default
   Color get appButtonDefaultBackground;
+  Color get appButtonPurpleBackground;
   Color get appButtonDefaultTextColor;
 
   //App Text Form Field
@@ -26,5 +27,5 @@ abstract class AppColors {
   Color get fontInputColor;
 
   //Dialog Default
-  Color get dialogBackground => Color(0xff2F2F2F);
+  Color get dialogBackground;
 }

@@ -5,7 +5,7 @@ Widget followerItemList(String avatarUrl, String login) {
     child: Column(
       children: [
         _imageCard(avatarUrl),
-        Text(login)
+        Expanded(child: Text(login))
       ],
     ),
   );
