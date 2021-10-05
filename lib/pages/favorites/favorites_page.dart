@@ -23,7 +23,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
   @override
   void initState() {
     super.initState();
-    favorites = _box.read(Constants.favorite_key) ?? [];
+    favorites = _box.read(Constants.favorites_key) ?? [];
   }
 
   @override

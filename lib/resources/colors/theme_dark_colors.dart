@@ -23,4 +23,7 @@ class ThemeDark extends AppColors {
 
   //Dialog Default
   Color get dialogBackground => Color(0xFF2F2F2F);
+
+  //Favorite Icon
+  Color get favoriteIcon => Color(0xFFB00020);
 }

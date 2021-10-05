@@ -31,7 +31,7 @@ class _FollowersPageState extends State<FollowersPage> {
   List<Follower> favorites = [];
 
   final _box = GetStorage();
-  bool isFavorite = false;
+  bool? isFavorite;
 
   void _openDialog(bool showTitle, String title, String message, String messageButton) {
     showDialog(
@@ -50,7 +50,14 @@ class _FollowersPageState extends State<FollowersPage> {
   @override
   void initState() {
     super.initState();
-    favorites = _box.read(Constants.favorite_key) ?? [];
+    favorites = _box.read(Constants.favorites_key) ?? [];
+    isFavorite = _box.read(Constants.is_favorite_key) ?? false;
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _box.write(Constants.is_favorite_key, isFavorite!);
   }
 
   @override
@@ -77,20 +84,20 @@ class _FollowersPageState extends State<FollowersPage> {
           IconButton(
             onPressed: () {
               setState(() {
-                isFavorite = !isFavorite;
-                if (isFavorite == true) {
+                isFavorite = !isFavorite!;
+                if (isFavorite!) {
                   var favorite = Follower(login: user!.login, avatarUrl: user!.avatarUrl);
                   favorites.add(favorite);
-                  _box.write(Constants.favorite_key, favorites);
                   _openDialog(false, "Success", "You have successfully favorited this user.", "success");
                 } else {
-                  _openDialog(false, "Error", "You have already favorited this user.", "error");
+                  favorites.removeWhere((element) => element.login == user!.login);
                 }
+                _box.write(Constants.favorites_key, favorites);
               });
             },
             icon: isFavorite == false ?
               Icon(Icons.favorite_outline_outlined, color: AppColors.of(context).appText) :
-              Icon(Icons.favorite_outlined, color: AppColors.of(context).appText),
+              Icon(Icons.favorite_outlined, color: AppColors.of(context).favoriteIcon),
           ),
         ],
       ),

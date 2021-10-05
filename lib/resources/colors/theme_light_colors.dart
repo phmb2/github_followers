@@ -23,4 +23,7 @@ class ThemeLight extends AppColors {
 
   //Dialog default
   Color get dialogBackground => Colors.white;
+
+  //Favorite Icon
+  Color get favoriteIcon => Color(0xFFB00020);
 }

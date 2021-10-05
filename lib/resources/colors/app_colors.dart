@@ -28,4 +28,7 @@ abstract class AppColors {
 
   //Dialog Default
   Color get dialogBackground;
+
+  //Favorite Icon
+  Color get favoriteIcon;
 }
