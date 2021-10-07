@@ -41,7 +41,10 @@ class _SplashPageState extends State<SplashPage> {
             ),
             Align(
               alignment: Alignment.bottomCenter,
-              child: appLoading(context),
+              child: Padding(
+                padding: EdgeInsets.only(bottom: 16.0),
+                child: appLoading(context),
+              ),
             ),
           ],
         ),
