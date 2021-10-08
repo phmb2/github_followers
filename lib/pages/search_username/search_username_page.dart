@@ -45,7 +45,7 @@ class _SearchUsernamePageState extends State<SearchUsernamePage> {
 
   Widget _logoImage() {
     return Container(
-        margin: EdgeInsets.only(right: 40, left: 40, bottom: 70, top: 100),
+        margin: EdgeInsets.only(right: 40, left: 40, bottom: 20, top: 100),
         child: Image(
           image: AssetImage(AppImages.of(context).logoGitHubFollowers),
           height: 220
@@ -93,7 +93,7 @@ class _SearchUsernamePageState extends State<SearchUsernamePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: Key("search_username"),
-      resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: true,
       backgroundColor: AppColors.of(context).appBackground,
       body: GestureDetector(
         onTap: () {
